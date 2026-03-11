@@ -30,11 +30,10 @@ public class AddJobs extends HttpServlet {
 
 		double salary = Double.parseDouble(request.getParameter("salary"));
 
-		String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
-		String DB_URL = "jdbc:mysql://localhost/jobportal";
-		String DB_USER = "root";
-		String DB_PWD = "root123";
-
+		String DB_DRIVER = "org.postgresql.Driver";
+	    String DB_USER = "root";
+	    String DB_PWD = "root@123";
+        String DB_URL = "jdbc:postgresql://localhost/jobportal";
 		try {
 
 			Class.forName(DB_DRIVER);

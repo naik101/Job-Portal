@@ -35,10 +35,10 @@ public class DisplayJobsServlet extends HttpServlet {
          response.setContentType("text/html");
          PrintWriter out = response.getWriter();
          // Configuration details
- 		String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
+ 		String DB_DRIVER = "org.postgresql.Driver";
 	    String DB_USER = "root";
-	    String DB_PWD = "root123";
-        String DB_URL = "jdbc:mysql://localhost/jobportal";
+	    String DB_PWD = "root@123";
+        String DB_URL = "jdbc:postgresql://localhost/jobportal";
         
         Connection con = null;
         PreparedStatement ps =null;

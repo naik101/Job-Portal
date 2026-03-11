@@ -29,10 +29,9 @@
 
 <!-- Source: https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 <dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-    <version>5.1.47</version>
-    <scope>compile</scope>
+<groupId>org.postgresql</groupId>
+<artifactId>postgresql</artifactId>
+<version>42.7.4</version>
 </dependency>
 
 </dependencies>

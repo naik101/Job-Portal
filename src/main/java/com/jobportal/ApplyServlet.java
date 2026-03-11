@@ -35,10 +35,10 @@ public class ApplyServlet extends HttpServlet {
 	    int user_id = (int) session.getAttribute("user_id");
 	    int job_id = Integer.parseInt(request.getParameter("job_id"));
 
-	    String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
+		String DB_DRIVER = "org.postgresql.Driver";
 	    String DB_USER = "root";
-	    String DB_PWD = "root123";
-	    String DB_URL = "jdbc:mysql://localhost/jobportal";
+	    String DB_PWD = "root@123";
+        String DB_URL = "jdbc:postgresql://localhost/jobportal";
 
 	    String qry = "INSERT INTO application(user_id,job_id) VALUES(?,?)";
 	    String msg = "";

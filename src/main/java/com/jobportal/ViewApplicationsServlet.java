@@ -24,21 +24,27 @@ public class ViewApplicationsServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		String DB_DRIVER = "org.postgresql.Driver";
+	    String DB_USER = "root";
+	    String DB_PWD = "root@123";
+        String DB_URL = "jdbc:postgresql://localhost/jobportal";
+		
 
 		List<Application> applications = new ArrayList<>();
 
 		try {
 
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName(DB_DRIVER);
 
 			Connection con = DriverManager.getConnection(
-					"jdbc:mysql://localhost/jobportal",
-					"root",
-					"root123");
+					DB_URL,
+					DB_USER,
+					DB_PWD);
 
 			String qry = "SELECT a.application_id, u.name, u.email, u.skills, j.title, j.company "
 					+ "FROM application a "
-					+ "JOIN user u ON a.user_id = u.user_id "
+					+ "JOIN users u ON a.user_id = u.user_id "
 					+ "JOIN job j ON a.job_id = j.job_id";
 
 			PreparedStatement ps = con.prepareStatement(qry);

@@ -45,7 +45,6 @@
 					<C:if test="${sessionScope.role == 'admin'}">
 					
 					    <li><a class="dropdown-item" href="./Addjob.jsp">Add Jobs</a></li>
-                        <li><a class="dropdown-item" href="#">Delete Jobs</a></li>
 					    <li><a class="dropdown-item" href="viewapplications">View Applications</a></li>
 				
 					</C:if>  	  

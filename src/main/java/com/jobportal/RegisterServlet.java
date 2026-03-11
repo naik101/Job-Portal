@@ -35,19 +35,17 @@ public class RegisterServlet extends HttpServlet {
 		String pwd  = request.getParameter("pwd");
 		String role = request.getParameter("role");
 		
-		
-		    String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
-		    String DB_USER = "root";
-		    String DB_PWD = "root123";
-	        String DB_URL = "jdbc:mysql://localhost/jobportal";
-	        
+		String DB_DRIVER = "org.postgresql.Driver";
+	    String DB_USER = "root";
+	    String DB_PWD = "root@123";
+        String DB_URL = "jdbc:postgresql://localhost/jobportal";
 	        
 	        Connection con = null;
 	        PreparedStatement ps =null;
 	      
 	        String msg = "";
 	        
-	        String qry = "INSERT INTO user(name,email,skills,password,role) values(?,?,?,?,?)";
+	        String qry = "INSERT INTO users(name,email,skills,password,role) values(?,?,?,?,?)";
 	        
 	        try
 	        {
@@ -81,7 +79,7 @@ public class RegisterServlet extends HttpServlet {
 	        catch(Exception e)
 	        {
 	        	msg="<div class=\"alert alert-danger text-center\" role=\"alert\">\r\n"
-	           	          + " Login Failed"
+	           	          + " Registration Filed"
 	         	          + "</div>";
 	            	request.setAttribute("msg", msg);
 	                RequestDispatcher rd = request.getRequestDispatcher("./Register.jsp");

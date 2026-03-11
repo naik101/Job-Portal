@@ -29,10 +29,10 @@ public class LoginServlet extends HttpServlet {
 		String pwd  = request.getParameter("pwd");
 		
 		
-		    String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
-		    String DB_USER = "root";
-		    String DB_PWD = "root123";
-	        String DB_URL = "jdbc:mysql://localhost/jobportal";
+		String DB_DRIVER = "org.postgresql.Driver";
+	    String DB_USER = "root";
+	    String DB_PWD = "root@123";
+        String DB_URL = "jdbc:postgresql://localhost/jobportal";
 	        
 	        
 	        Connection con = null;
@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
 	        ResultSet rs = null;
 	        String msg = "";
 	        
-	        String qry = "SELECT user_id,name,role FROM user WHERE email=? AND password=?";
+	        String qry = "SELECT user_id,name,role FROM users WHERE email=? AND password=?";
 	        
 	        try
 	        {
