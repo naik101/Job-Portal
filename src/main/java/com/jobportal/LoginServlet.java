@@ -28,12 +28,11 @@ public class LoginServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String pwd  = request.getParameter("pwd");
 		
-		
 		String DB_DRIVER = "org.postgresql.Driver";
-	    String DB_USER = "root";
-	    String DB_PWD = "root@123";
-        String DB_URL = "jdbc:postgresql://localhost/jobportal";
-	        
+	    String DB_USER = "neondb_owner";
+	    String DB_PWD = "npg_Po13muxOaYrg";
+        String DB_URL = "jdbc:postgresql://ep-rough-block-a1s825h6-pooler.ap-southeast-1.aws.neon.tech/neondb";
+
 	        
 	        Connection con = null;
 	        PreparedStatement ps =null;
